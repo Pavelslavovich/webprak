@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="webprak_2026_stage1" default="db.reset" basedir=".">
+    <property name="db.host" value="localhost"/>
+    <property name="db.port" value="5432"/>
+    <property name="db.name" value="postgres"/>
+    <property name="db.user" value="pavel_loktionow"/>
+    <property name="db.password" value=""/>
+
+    <property name="psql.exec" value="psql"/>
+
+    <macrodef name="psql">
+        <attribute name="args"/>
+        <sequential>
+            <exec executable="${psql.exec}" failonerror="true">
+                <env key="PGPASSWORD" value="${db.password}"/>
+                <arg value="-v"/>
+                <arg value="ON_ERROR_STOP=1"/>
+                <arg value="-h"/>
+                <arg value="${db.host}"/>
+                <arg value="-p"/>
+                <arg value="${db.port}"/>
+                <arg value="-U"/>
+                <arg value="${db.user}"/>
+                <arg value="-d"/>
+                <arg value="${db.name}"/>
+                <arg line="@{args}"/>
+            </exec>
+        </sequential>
+    </macrodef>
+
+    <target name="db.create" description="Создать схему БД (таблицы/типы)">
+        <psql args="-f create.sql"/>
+    </target>
+
+    <target name="db.init" depends="db.create" description="Инициализировать БД примерными данными">
+        <psql args="-f init.sql"/>
+    </target>
+
+    <target name="db.clean" description="Очистить таблицы (TRUNCATE)">
+        <psql args="-c &quot;TRUNCATE TABLE contract_employees, service_contracts, employee_contact_methods, employees, client_contact_methods, client_contacts, services, clients RESTART IDENTITY CASCADE;&quot;"/>
+    </target>
+
+    <target name="db.show" description="Вывести содержимое БД (основные таблицы)">
+        <psql args="-c &quot;SELECT 'clients' AS table_name, count(*) AS rows FROM clients;&quot;"/>
+        <psql args="-c &quot;SELECT 'employees' AS table_name, count(*) AS rows FROM employees;&quot;"/>
+        <psql args="-c &quot;SELECT 'services' AS table_name, count(*) AS rows FROM services;&quot;"/>
+        <psql args="-c &quot;SELECT 'service_contracts' AS table_name, count(*) AS rows FROM service_contracts;&quot;"/>
+        <psql args="-c &quot;SELECT 'contract_employees' AS table_name, count(*) AS rows FROM contract_employees;&quot;"/>
+
+        <psql args="-c &quot;SELECT * FROM clients ORDER BY client_id;&quot;"/>
+        <psql args="-c &quot;SELECT * FROM employees ORDER BY employee_id;&quot;"/>
+        <psql args="-c &quot;SELECT * FROM services ORDER BY service_id;&quot;"/>
+        <psql args="-c &quot;SELECT * FROM service_contracts ORDER BY contract_id;&quot;"/>
+        <psql args="-c &quot;SELECT * FROM contract_employees ORDER BY contract_id, employee_id;&quot;"/>
+    </target>
+
+    <target name="db.reset" depends="db.create,db.init" description="Пересоздать схему и заново заполнить данными"/>
+</project>
+
