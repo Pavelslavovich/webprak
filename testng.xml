@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="webprak_suite" verbose="1">
+    <test name="dao-tests">
+        <classes>
+            <class name="ru.Pavelslavovich.webprak.dao.ClientDaoTests"/>
+            <class name="ru.Pavelslavovich.webprak.dao.EmployeeDaoTests"/>
+            <class name="ru.Pavelslavovich.webprak.dao.ServiceDaoTests"/>
+            <class name="ru.Pavelslavovich.webprak.dao.ServiceContractDaoTests"/>
+        </classes>
+    </test>
+</suite>

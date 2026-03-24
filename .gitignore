@@ -1,2 +1,11 @@
 .DS_Store
 trash/
+
+# local toolchains
+.local/
+
+# build artifacts
+build/
+lib/
+tools/
+test-output/

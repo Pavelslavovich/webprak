@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0">
+    <info organisation="ru.Pavelslavovich" module="webprak"/>
+
+    <configurations>
+        <conf name="compile"/>
+        <conf name="runtime" extends="compile"/>
+        <conf name="test" extends="runtime"/>
+    </configurations>
+
+    <dependencies>
+        <dependency org="org.hibernate.orm" name="hibernate-core" rev="6.5.2.Final" conf="compile->default"/>
+        <dependency org="org.postgresql" name="postgresql" rev="42.7.4" conf="runtime->default"/>
+        <dependency org="org.slf4j" name="slf4j-simple" rev="2.0.13" conf="runtime->default"/>
+
+        <dependency org="com.h2database" name="h2" rev="2.2.224" conf="test->default"/>
+        <dependency org="org.testng" name="testng" rev="7.10.2" conf="test->default"/>
+    </dependencies>
+</ivy-module>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="webprak" default="test" basedir="." xmlns:ivy="antlib:org.apache.ivy.ant">
+    <property name="src.main.java" value="src/main/java"/>
+    <property name="src.main.resources" value="src/main/resources"/>
+    <property name="src.test.java" value="src/test/java"/>
+    <property name="src.test.resources" value="src/test/resources"/>
+
+    <property name="build.dir" value="build"/>
+    <property name="build.main.classes" value="${build.dir}/classes/main"/>
+    <property name="build.test.classes" value="${build.dir}/classes/test"/>
+    <property name="build.main.resources" value="${build.dir}/resources/main"/>
+    <property name="build.test.resources" value="${build.dir}/resources/test"/>
+
+    <property name="ivy.jar" value="tools/ivy-2.5.2.jar"/>
+
+    <target name="bootstrap-ivy" unless="ivy.present">
+        <condition property="ivy.present">
+            <available file="${ivy.jar}"/>
+        </condition>
+        <mkdir dir="tools"/>
+        <get src="https://repo1.maven.org/maven2/org/apache/ivy/ivy/2.5.2/ivy-2.5.2.jar"
+             dest="${ivy.jar}" skipexisting="true"/>
+    </target>
+
+    <target name="resolve" depends="bootstrap-ivy">
+        <taskdef uri="antlib:org.apache.ivy.ant"
+                 resource="org/apache/ivy/ant/antlib.xml"
+                 classpath="${ivy.jar}"/>
+
+        <ivy:settings/>
+        <ivy:resolve file="ivy.xml"/>
+        <ivy:retrieve pattern="lib/[conf]/[artifact]-[revision](-[classifier]).[ext]" sync="true"/>
+    </target>
+
+    <path id="main.classpath">
+        <fileset dir="lib/compile" includes="*.jar"/>
+        <fileset dir="lib/runtime" includes="*.jar"/>
+    </path>
+
+    <path id="test.classpath">
+        <path refid="main.classpath"/>
+        <fileset dir="lib/test" includes="*.jar"/>
+        <pathelement location="${build.main.classes}"/>
+        <pathelement location="${build.main.resources}"/>
+        <pathelement location="${build.test.classes}"/>
+        <pathelement location="${build.test.resources}"/>
+    </path>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="compile" depends="resolve">
+        <mkdir dir="${build.main.classes}"/>
+        <mkdir dir="${build.main.resources}"/>
+
+        <javac srcdir="${src.main.java}" destdir="${build.main.classes}" includeantruntime="false"
+               source="17" target="17" encoding="UTF-8" classpathref="main.classpath"/>
+        <copy todir="${build.main.resources}">
+            <fileset dir="${src.main.resources}"/>
+        </copy>
+    </target>
+
+    <target name="compile-tests" depends="compile">
+        <mkdir dir="${build.test.classes}"/>
+        <mkdir dir="${build.test.resources}"/>
+
+        <javac srcdir="${src.test.java}" destdir="${build.test.classes}" includeantruntime="false"
+               source="17" target="17" encoding="UTF-8" classpathref="test.classpath"/>
+        <copy todir="${build.test.resources}">
+            <fileset dir="${src.test.resources}"/>
+        </copy>
+    </target>
+
+    <target name="test" depends="compile-tests">
+        <java classname="org.testng.TestNG" classpathref="test.classpath" fork="true" failonerror="true">
+            <arg value="testng.xml"/>
+        </java>
+    </target>
+
+    <target name="db.create">
+        <ant antfile="database/build.xml" target="db.create" inheritall="true"/>
+    </target>
+
+    <target name="db.init">
+        <ant antfile="database/build.xml" target="db.init" inheritall="true"/>
+    </target>
+
+    <target name="db.reset">
+        <ant antfile="database/build.xml" target="db.reset" inheritall="true"/>
+    </target>
+</project>

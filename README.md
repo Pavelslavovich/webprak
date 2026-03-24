@@ -246,3 +246,43 @@
 - `init.sql` — примерное заполнение БД (в каждой таблице ≥ 3–5 записей; для enum-типов присутствуют записи со всеми значениями)
 - `build.xml` — Ant-задачи: создание, инициализация, вывод содержимого, очистка
 
+## Этап 2 (Hibernate + DAO + TestNG)
+
+Реализованы:
+
+- Классы хранимых объектов (Hibernate/JPA) для всех таблиц схемы:
+  - `Client`, `ClientContact`, `ClientContactMethod`
+  - `Employee`, `EmployeeContactMethod`
+  - `ServiceEntity`, `ServiceContract`, `ContractEmployee`
+  - enum-типы: `ClientType`, `ContactMethodType`, `ContractStatus`
+- Конфигурация Hibernate:
+  - `src/main/resources/hibernate.cfg.xml` — рабочая конфигурация под PostgreSQL
+  - `src/test/resources/hibernate-test.cfg.xml` — тестовая конфигурация под H2
+- DAO-классы с CRUD и типовыми запросами приложения:
+  - `ClientDao`
+  - `EmployeeDao`
+  - `ServiceDao`
+  - `ServiceContractDao`
+- Модульные тесты TestNG для всех DAO-методов с нетривиальной логикой:
+  - `ClientDaoTests`
+  - `EmployeeDaoTests`
+  - `ServiceDaoTests`
+  - `ServiceContractDaoTests`
+
+### Сборка и запуск тестов
+
+Используется `Ant` + `Ivy`.
+
+- `ant resolve` — скачать зависимости в `lib/`
+- `ant compile` — сборка основного кода
+- `ant compile-tests` — сборка тестов
+- `ant test` — запуск TestNG тестов
+
+### Ant-задачи для БД
+
+В корневом `build.xml` добавлены прокси-задачи к SQL-этапу:
+
+- `ant db.create`
+- `ant db.init`
+- `ant db.reset`
+
