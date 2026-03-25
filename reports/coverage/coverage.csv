@@ -1,0 +1,20 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+webprak DAO coverage,ru.Pavelslavovich.webprak.model,ServiceEntity,14,28,0,0,0,0,4,4,4,4
+webprak DAO coverage,ru.Pavelslavovich.webprak.model,ContractStatus,0,27,0,0,0,0,0,1,0,1
+webprak DAO coverage,ru.Pavelslavovich.webprak.model,EmployeeContactMethod,43,3,0,0,0,0,10,1,10,1
+webprak DAO coverage,ru.Pavelslavovich.webprak.model,ContractEmployee,24,25,0,0,0,0,7,2,7,2
+webprak DAO coverage,ru.Pavelslavovich.webprak.model,ServiceContract,60,70,0,0,0,0,17,6,17,6
+webprak DAO coverage,ru.Pavelslavovich.webprak.model,ClientContactMethod,43,3,0,0,0,0,10,1,10,1
+webprak DAO coverage,ru.Pavelslavovich.webprak.model,Employee,47,47,0,0,0,0,12,4,12,4
+webprak DAO coverage,ru.Pavelslavovich.webprak.model,ClientType,0,15,0,0,0,0,0,1,0,1
+webprak DAO coverage,ru.Pavelslavovich.webprak.model,ContactMethodType,0,21,0,0,0,0,0,1,0,1
+webprak DAO coverage,ru.Pavelslavovich.webprak.model,ContractEmployeeId,67,3,8,0,0,0,11,1,7,1
+webprak DAO coverage,ru.Pavelslavovich.webprak.model,ClientContact,60,8,0,0,0,0,12,1,12,1
+webprak DAO coverage,ru.Pavelslavovich.webprak.model,Client,36,48,0,0,0,0,9,5,9,5
+webprak DAO coverage,ru.Pavelslavovich.webprak.dao,ServiceDao,74,27,2,0,0,0,12,3,11,3
+webprak DAO coverage,ru.Pavelslavovich.webprak.dao,ClientDao,15,90,0,2,0,0,3,12,3,11
+webprak DAO coverage,ru.Pavelslavovich.webprak.dao,DaoSupport,10,25,4,0,0,0,2,2,0,2
+webprak DAO coverage,ru.Pavelslavovich.webprak.dao,EmployeeDao,74,27,2,0,0,0,12,3,11,3
+webprak DAO coverage,ru.Pavelslavovich.webprak.dao,ServiceContractDao,68,97,3,3,0,0,11,10,9,9
+webprak DAO coverage,ru.Pavelslavovich.webprak.dao,ServiceContractDao.EmployeeRole,0,9,0,0,0,0,0,1,0,1
+webprak DAO coverage,ru.Pavelslavovich.webprak.config,HibernateUtil,21,0,0,0,0,0,4,0,4,0

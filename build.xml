@@ -13,6 +13,12 @@
 
     <property name="ivy.jar" value="tools/ivy-2.5.2.jar"/>
 
+    <property name="jacoco.agent.jar" value="tools/jacoco/lib/jacocoagent.jar"/>
+    <property name="jacoco.ant.jar"   value="tools/jacoco/lib/jacocoant.jar"/>
+    <property name="jacoco.exec"      value="${build.dir}/jacoco.exec"/>
+    <property name="coverage.dir"     value="${build.dir}/coverage"/>
+    <property name="test.log"         value="${build.dir}/test-results.log"/>
+
     <target name="bootstrap-ivy" unless="ivy.present">
         <condition property="ivy.present">
             <available file="${ivy.jar}"/>
@@ -20,6 +26,14 @@
         <mkdir dir="tools"/>
         <get src="https://repo1.maven.org/maven2/org/apache/ivy/ivy/2.5.2/ivy-2.5.2.jar"
              dest="${ivy.jar}" skipexisting="true"/>
+    </target>
+
+    <target name="bootstrap-jacoco">
+        <mkdir dir="tools/jacoco/lib"/>
+        <get src="https://repo1.maven.org/maven2/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar"
+             dest="${jacoco.agent.jar}" skipexisting="true"/>
+        <get src="https://repo1.maven.org/maven2/org/jacoco/org.jacoco.ant/0.8.11/org.jacoco.ant-0.8.11-nodeps.jar"
+             dest="${jacoco.ant.jar}" skipexisting="true"/>
     </target>
 
     <target name="resolve" depends="bootstrap-ivy">
@@ -72,10 +86,37 @@
         </copy>
     </target>
 
-    <target name="test" depends="compile-tests">
+    <target name="test" depends="compile-tests,bootstrap-jacoco">
+        <mkdir dir="${build.dir}/test-output"/>
         <java classname="org.testng.TestNG" classpathref="test.classpath" fork="true" failonerror="true">
+            <jvmarg value="-javaagent:${jacoco.agent.jar}=destfile=${jacoco.exec}"/>
             <arg value="testng.xml"/>
+            <arg value="-d"/>
+            <arg value="${build.dir}/test-output"/>
+            <redirector output="${test.log}" alwayslog="true"/>
         </java>
+    </target>
+
+    <target name="coverage" depends="test">
+        <taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml"
+                 classpath="${jacoco.ant.jar}"/>
+        <mkdir dir="${coverage.dir}"/>
+        <jacoco:report xmlns:jacoco="antlib:org.jacoco.ant">
+            <executiondata>
+                <file file="${jacoco.exec}"/>
+            </executiondata>
+            <structure name="webprak DAO coverage">
+                <classfiles>
+                    <fileset dir="${build.main.classes}"/>
+                </classfiles>
+                <sourcefiles encoding="UTF-8">
+                    <fileset dir="${src.main.java}"/>
+                </sourcefiles>
+            </structure>
+            <html destdir="${coverage.dir}"/>
+            <csv destfile="${coverage.dir}/coverage.csv"/>
+        </jacoco:report>
+        <echo>Coverage report: ${coverage.dir}/index.html</echo>
     </target>
 
     <target name="db.create">
