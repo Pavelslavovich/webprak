@@ -1,0 +1,32 @@
+===========================================================================
+  TEST RESULTS  webprak_suite  (TestNG 7.10.2 | JDK 17 | H2 in-memory)
+===========================================================================
+  Total: 10   Passed: 10   Failed: 0   Skips: 0
+
+  #    STATUS   CLASS                        TEST METHOD
+  ----------------------------------------------------------------------
+  1    PASS     ServiceContractDaoTests      testFindByContractNumberFoundAndNotFound  (21 ms)
+  2    PASS     ServiceContractDaoTests      testFindByStatusVariants  (16 ms)
+  3    PASS     ServiceContractDaoTests      testRegisterContractWithEmployees  (48 ms)
+  4    PASS     ServiceDaoTests              testFindByNameLikeAndCostRangeWithMatches  (474 ms)
+  5    PASS     ServiceDaoTests              testFindByNameLikeAndCostRangeWithoutMatches  (11 ms)
+  6    PASS     EmployeeDaoTests             testFindByClientAndPeriodWithMatches  (41 ms)
+  7    PASS     EmployeeDaoTests             testFindByClientAndPeriodWithoutMatches  (15 ms)
+  8    PASS     ClientDaoTests               testFindByServiceInPeriodAndEmployeeWhenNoMatches  (470 ms)
+  9    PASS     ClientDaoTests               testFindByServiceInPeriodAndEmployeeWithEmployeeFilter  (25 ms)
+  10   PASS     ClientDaoTests               testSaveFindUpdateDelete  (52 ms)
+
+===========================================================================
+  JACOCO BRANCH COVERAGE  DAO layer  (JaCoCo 0.8.11)
+===========================================================================
+  Class                            Branches               Instructions           Methods
+  ----------------------------------------------------------------------
+  ServiceDao                       0/2 (0%)               27/101 (27%)           3/14 (21%)
+  ClientDao                        2/2 (100%)             90/105 (86%)           11/14 (79%)
+  DaoSupport                       0/4 (0%)               25/35 (71%)            2/2 (100%)
+  EmployeeDao                      0/2 (0%)               27/101 (27%)           3/14 (21%)
+  ServiceContractDao               3/6 (50%)              97/165 (59%)           9/18 (50%)
+  ServiceContractDao.EmployeeRole  N/A (no branches)      9/9 (100%)             1/1 (100%)
+
+  Full HTML report: reports/coverage/index.html
+===========================================================================
