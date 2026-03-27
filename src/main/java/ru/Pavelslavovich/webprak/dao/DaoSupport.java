@@ -14,17 +14,16 @@ public abstract class DaoSupport {
     }
 
     protected <T> T inTransaction(Function<Session, T> action) {
-        Transaction tx = null;
         try (Session session = sessionFactory.openSession()) {
-            tx = session.beginTransaction();
-            T result = action.apply(session);
-            tx.commit();
-            return result;
-        } catch (RuntimeException ex) {
-            if (tx != null && tx.isActive()) {
+            Transaction tx = session.beginTransaction();
+            try {
+                T result = action.apply(session);
+                tx.commit();
+                return result;
+            } catch (RuntimeException ex) {
                 tx.rollback();
+                throw ex;
             }
-            throw ex;
         }
     }
 }

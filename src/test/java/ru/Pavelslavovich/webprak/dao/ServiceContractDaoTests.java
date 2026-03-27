@@ -42,6 +42,25 @@ public class ServiceContractDaoTests extends DaoTestSupport {
     }
 
     @Test
+    public void testDeleteByIdFoundAndNotFound() {
+        SeedData data = seedBasicData();
+        ServiceContract contract = new ServiceContract(
+                "LF-T-DEL",
+                data.clients().get(0),
+                data.services().get(0),
+                LocalDate.of(2026, 3, 1),
+                LocalDate.of(2026, 3, 2),
+                null,
+                ContractStatus.DRAFT,
+                new BigDecimal("1000.00"),
+                ""
+        );
+        ServiceContract saved = serviceContractDao.registerContractWithEmployees(contract, List.of());
+        Assert.assertTrue(serviceContractDao.deleteById(saved.getId()));
+        Assert.assertFalse(serviceContractDao.deleteById(saved.getId()));
+    }
+
+    @Test
     public void testRegisterContractWithEmployees() {
         SeedData data = seedBasicData();
 
