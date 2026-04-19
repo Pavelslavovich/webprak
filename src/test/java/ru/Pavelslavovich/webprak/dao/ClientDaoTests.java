@@ -71,4 +71,12 @@ public class ClientDaoTests extends DaoTestSupport {
 
         Assert.assertTrue(clients.isEmpty());
     }
+
+    @Test
+    public void testFindAllReturnsSeededClients() {
+        seedBasicData();
+
+        List<Client> clients = clientDao.findAll();
+        Assert.assertEquals(clients.size(), 2);
+    }
 }

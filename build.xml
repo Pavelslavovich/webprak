@@ -19,6 +19,11 @@
     <property name="coverage.dir"     value="${build.dir}/coverage"/>
     <property name="test.log"         value="${build.dir}/test-results.log"/>
 
+    <property name="src.main.webapp"  value="src/main/webapp"/>
+    <property name="war.file"         value="${build.dir}/webprak.war"/>
+    <property environment="env"/>
+    <property name="catalina.home"    value="${env.CATALINA_HOME}"/>
+
     <target name="bootstrap-ivy" unless="ivy.present">
         <condition property="ivy.present">
             <available file="${ivy.jar}"/>
@@ -51,8 +56,13 @@
         <fileset dir="lib/runtime" includes="*.jar"/>
     </path>
 
-    <path id="test.classpath">
+    <path id="compile.classpath">
         <path refid="main.classpath"/>
+        <fileset dir="lib/provided" includes="*.jar"/>
+    </path>
+
+    <path id="test.classpath">
+        <path refid="compile.classpath"/>
         <fileset dir="lib/test" includes="*.jar"/>
         <pathelement location="${build.main.classes}"/>
         <pathelement location="${build.main.resources}"/>
@@ -69,7 +79,9 @@
         <mkdir dir="${build.main.resources}"/>
 
         <javac srcdir="${src.main.java}" destdir="${build.main.classes}" includeantruntime="false"
-               source="17" target="17" encoding="UTF-8" classpathref="main.classpath"/>
+               source="17" target="17" encoding="UTF-8" classpathref="compile.classpath">
+            <compilerarg value="-parameters"/>
+        </javac>
         <copy todir="${build.main.resources}">
             <fileset dir="${src.main.resources}"/>
         </copy>
@@ -80,7 +92,9 @@
         <mkdir dir="${build.test.resources}"/>
 
         <javac srcdir="${src.test.java}" destdir="${build.test.classes}" includeantruntime="false"
-               source="17" target="17" encoding="UTF-8" classpathref="test.classpath"/>
+               source="17" target="17" encoding="UTF-8" classpathref="test.classpath">
+            <compilerarg value="-parameters"/>
+        </javac>
         <copy todir="${build.test.resources}">
             <fileset dir="${src.test.resources}"/>
         </copy>
@@ -120,14 +134,39 @@
     </target>
 
     <target name="db.create">
-        <ant antfile="database/build.xml" target="db.create" inheritall="true"/>
+        <ant dir="database" antfile="build.xml" target="db.create" inheritall="true"/>
     </target>
 
     <target name="db.init">
-        <ant antfile="database/build.xml" target="db.init" inheritall="true"/>
+        <ant dir="database" antfile="build.xml" target="db.init" inheritall="true"/>
     </target>
 
     <target name="db.reset">
-        <ant antfile="database/build.xml" target="db.reset" inheritall="true"/>
+        <ant dir="database" antfile="build.xml" target="db.reset" inheritall="true"/>
+    </target>
+
+    <target name="war" depends="compile">
+        <war destfile="${war.file}" webxml="${src.main.webapp}/WEB-INF/web.xml">
+            <fileset dir="${src.main.webapp}"/>
+            <classes dir="${build.main.classes}"/>
+            <classes dir="${build.main.resources}"/>
+            <lib dir="lib/compile" includes="*.jar"/>
+            <lib dir="lib/runtime" includes="*.jar"/>
+        </war>
+        <echo>WAR built: ${war.file}</echo>
+    </target>
+
+    <target name="deploy" depends="war">
+        <fail unless="catalina.home" message="Set CATALINA_HOME environment variable"/>
+        <copy file="${war.file}" todir="${catalina.home}/webapps"/>
+        <echo>Deployed to ${catalina.home}/webapps</echo>
+    </target>
+
+    <target name="test-selenium" depends="compile-tests">
+        <java classname="org.testng.TestNG" classpathref="test.classpath" fork="true" failonerror="true">
+            <arg value="testng-selenium.xml"/>
+            <arg value="-d"/>
+            <arg value="${build.dir}/test-output-selenium"/>
+        </java>
     </target>
 </project>

@@ -4,6 +4,7 @@
 
     <configurations>
         <conf name="compile"/>
+        <conf name="provided"/>
         <conf name="runtime" extends="compile"/>
         <conf name="test" extends="runtime"/>
     </configurations>
@@ -13,7 +14,19 @@
         <dependency org="org.postgresql" name="postgresql" rev="42.7.4" conf="runtime->default"/>
         <dependency org="org.slf4j" name="slf4j-simple" rev="2.0.13" conf="runtime->default"/>
 
+        <!-- Spring MVC -->
+        <dependency org="org.springframework" name="spring-webmvc" rev="6.1.10" conf="compile->default"/>
+
+        <!-- Servlet / JSP / JSTL (provided by container) -->
+        <dependency org="jakarta.servlet" name="jakarta.servlet-api" rev="6.0.0" conf="provided->default"/>
+        <dependency org="jakarta.servlet.jsp" name="jakarta.servlet.jsp-api" rev="3.1.1" conf="provided->default"/>
+        <dependency org="jakarta.servlet.jsp.jstl" name="jakarta.servlet.jsp.jstl-api" rev="3.0.0" conf="compile->default"/>
+        <dependency org="org.glassfish.web" name="jakarta.servlet.jsp.jstl" rev="3.0.1" conf="runtime->default"/>
+
         <dependency org="com.h2database" name="h2" rev="2.2.224" conf="test->default"/>
         <dependency org="org.testng" name="testng" rev="7.10.2" conf="test->default"/>
+
+        <!-- Selenium -->
+        <dependency org="org.seleniumhq.selenium" name="selenium-java" rev="4.21.0" conf="test->default"/>
     </dependencies>
 </ivy-module>

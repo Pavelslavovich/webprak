@@ -1,34 +1,37 @@
 ===========================================================================
   TEST RESULTS  webprak_suite  (TestNG 7.10.2 | JDK 17 | H2 in-memory)
 ===========================================================================
-  Total: 13   Passed: 13   Failed: 0   Skips: 0
+  Total: 16   Passed: 16   Failed: 0   Skips: 0
 
   #    STATUS   CLASS                        TEST METHOD
   ----------------------------------------------------------------------
-  1    PASS     ServiceContractDaoTests      testDeleteByIdFoundAndNotFound  (15 ms)
-  2    PASS     ServiceContractDaoTests      testFindByContractNumberFoundAndNotFound  (10 ms)
-  3    PASS     ServiceContractDaoTests      testFindByStatusVariants  (9 ms)
-  4    PASS     ServiceContractDaoTests      testRegisterContractWithEmployees  (27 ms)
-  5    PASS     ServiceDaoTests              testFindByNameLikeAndCostRangeWithMatches  (312 ms)
-  6    PASS     ServiceDaoTests              testFindByNameLikeAndCostRangeWithoutMatches  (8 ms)
-  7    PASS     ServiceDaoTests              testSaveFindUpdateDeleteById  (10 ms)
-  8    PASS     EmployeeDaoTests             testFindByClientAndPeriodWithMatches  (28 ms)
-  9    PASS     EmployeeDaoTests             testFindByClientAndPeriodWithoutMatches  (9 ms)
-  10   PASS     EmployeeDaoTests             testSaveFindUpdateDeleteById  (17 ms)
-  11   PASS     ClientDaoTests               testFindByServiceInPeriodAndEmployeeWhenNoMatches  (330 ms)
-  12   PASS     ClientDaoTests               testFindByServiceInPeriodAndEmployeeWithEmployeeFilter  (16 ms)
-  13   PASS     ClientDaoTests               testSaveFindUpdateDelete  (37 ms)
+  1    PASS     ServiceContractDaoTests      testDeleteByIdFoundAndNotFound  (20 ms)
+  2    PASS     ServiceContractDaoTests      testFindByContractNumberFoundAndNotFound  (13 ms)
+  3    PASS     ServiceContractDaoTests      testFindByStatusVariants  (16 ms)
+  4    PASS     ServiceContractDaoTests      testRegisterContractWithEmployees  (47 ms)
+  5    PASS     ServiceContractDaoTests      testRegisterContractWithEmployeesReturnsNullForUnknownEmployee  (13 ms)
+  6    PASS     ServiceContractDaoTests      testSaveFindAllAndUpdate  (36 ms)
+  7    PASS     ServiceDaoTests              testFindByNameLikeAndCostRangeWithMatches  (349 ms)
+  8    PASS     ServiceDaoTests              testFindByNameLikeAndCostRangeWithoutMatches  (8 ms)
+  9    PASS     ServiceDaoTests              testSaveFindUpdateDeleteById  (9 ms)
+  10   PASS     EmployeeDaoTests             testFindByClientAndPeriodWithMatches  (31 ms)
+  11   PASS     EmployeeDaoTests             testFindByClientAndPeriodWithoutMatches  (9 ms)
+  12   PASS     EmployeeDaoTests             testSaveFindUpdateDeleteById  (18 ms)
+  13   PASS     ClientDaoTests               testFindAllReturnsSeededClients  (175 ms)
+  14   PASS     ClientDaoTests               testFindByServiceInPeriodAndEmployeeWhenNoMatches  (175 ms)
+  15   PASS     ClientDaoTests               testFindByServiceInPeriodAndEmployeeWithEmployeeFilter  (14 ms)
+  16   PASS     ClientDaoTests               testSaveFindUpdateDelete  (35 ms)
 
 ===========================================================================
   JACOCO BRANCH COVERAGE  DAO layer  (JaCoCo 0.8.11)
 ===========================================================================
   Class                            Branches               Instructions           Methods
   ----------------------------------------------------------------------
-  ServiceDao                       2/2 (100%)             97/101 (96%)           13/14 (93%)
-  ClientDao                        2/2 (100%)             90/105 (86%)           11/14 (79%)
+  ServiceDao                       2/2 (100%)             97/97 (100%)           13/13 (100%)
+  ClientDao                        2/2 (100%)             101/101 (100%)         13/13 (100%)
   DaoSupport                       N/A (no branches)      23/28 (82%)            2/2 (100%)
-  EmployeeDao                      2/2 (100%)             97/101 (96%)           13/14 (93%)
-  ServiceContractDao               5/6 (83%)              121/165 (73%)          11/18 (61%)
+  EmployeeDao                      2/2 (100%)             97/97 (100%)           13/13 (100%)
+  ServiceContractDao               8/8 (100%)             174/174 (100%)         17/17 (100%)
   ServiceContractDao.EmployeeRole  N/A (no branches)      9/9 (100%)             1/1 (100%)
 
   Full HTML report: reports/coverage/index.html

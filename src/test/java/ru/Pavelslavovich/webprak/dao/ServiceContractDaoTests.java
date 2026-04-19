@@ -61,6 +61,34 @@ public class ServiceContractDaoTests extends DaoTestSupport {
     }
 
     @Test
+    public void testSaveFindAllAndUpdate() {
+        SeedData data = seedBasicData();
+
+        ServiceContract contract = new ServiceContract(
+                "LF-T-004",
+                data.clients().get(0),
+                data.services().get(0),
+                LocalDate.of(2026, 4, 1),
+                LocalDate.of(2026, 4, 2),
+                null,
+                ContractStatus.DRAFT,
+                new BigDecimal("12000.00"),
+                "test"
+        );
+
+        ServiceContract saved = serviceContractDao.save(contract);
+        Assert.assertNotNull(saved.getId());
+
+        List<ServiceContract> all = serviceContractDao.findAll();
+        Assert.assertTrue(all.size() >= 3);
+
+        saved.setComment("updated");
+        serviceContractDao.update(saved);
+        ServiceContract updated = serviceContractDao.findById(saved.getId()).orElseThrow();
+        Assert.assertEquals(updated.getComment(), "updated");
+    }
+
+    @Test
     public void testRegisterContractWithEmployees() {
         SeedData data = seedBasicData();
 
@@ -99,5 +127,30 @@ public class ServiceContractDaoTests extends DaoTestSupport {
                         .intValue()
         );
         Assert.assertEquals(employeesCount.intValue(), 2);
+    }
+
+    @Test
+    public void testRegisterContractWithEmployeesReturnsNullForUnknownEmployee() {
+        SeedData data = seedBasicData();
+
+        ServiceContract contract = new ServiceContract(
+                "LF-T-005",
+                data.clients().get(0),
+                data.services().get(1),
+                LocalDate.of(2026, 5, 1),
+                LocalDate.of(2026, 5, 2),
+                null,
+                ContractStatus.DRAFT,
+                new BigDecimal("3000.00"),
+                "invalid employee"
+        );
+
+        ServiceContract result = serviceContractDao.registerContractWithEmployees(
+                contract,
+                List.of(new ServiceContractDao.EmployeeRole(-1L, "исполнитель"))
+        );
+
+        Assert.assertNull(result);
+        Assert.assertFalse(serviceContractDao.findByContractNumber("LF-T-005").isPresent());
     }
 }
