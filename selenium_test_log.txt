@@ -1,0 +1,252 @@
+Buildfile: /Users/pavel_loktionow/yasd_algorithms/webprak/build.xml
+
+bootstrap-ivy:
+      [get] Destination already exists (skipping): /Users/pavel_loktionow/yasd_algorithms/webprak/tools/ivy-2.5.2.jar
+
+resolve:
+[ivy:resolve] :: Apache Ivy 2.5.2 - 20230817170011 :: https://ant.apache.org/ivy/ ::
+[ivy:resolve] :: loading settings :: url = jar:file:/Users/pavel_loktionow/yasd_algorithms/webprak/tools/ivy-2.5.2.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[ivy:resolve] :: resolving dependencies :: ru.Pavelslavovich#webprak;working@MacBook-Air-Pavel-2.local
+[ivy:resolve] 	confs: [compile, provided, runtime, test]
+[ivy:resolve] 	found org.hibernate.orm#hibernate-core;6.5.2.Final in public
+[ivy:resolve] 	found jakarta.persistence#jakarta.persistence-api;3.1.0 in public
+[ivy:resolve] 	found jakarta.transaction#jakarta.transaction-api;2.0.1 in public
+[ivy:resolve] 	found org.jboss.logging#jboss-logging;3.5.0.Final in public
+[ivy:resolve] 	found org.hibernate.common#hibernate-commons-annotations;6.0.6.Final in public
+[ivy:resolve] 	found io.smallrye#jandex;3.1.2 in public
+[ivy:resolve] 	found com.fasterxml#classmate;1.5.1 in public
+[ivy:resolve] 	found net.bytebuddy#byte-buddy;1.14.15 in public
+[ivy:resolve] 	found jakarta.xml.bind#jakarta.xml.bind-api;4.0.0 in public
+[ivy:resolve] 	found jakarta.activation#jakarta.activation-api;2.1.0 in public
+[ivy:resolve] 	found org.glassfish.jaxb#jaxb-runtime;4.0.2 in public
+[ivy:resolve] 	found org.glassfish.jaxb#jaxb-core;4.0.2 in public
+[ivy:resolve] 	found jakarta.activation#jakarta.activation-api;2.1.1 in public
+[ivy:resolve] 	found org.glassfish.jaxb#txw2;4.0.2 in public
+[ivy:resolve] 	found com.sun.istack#istack-commons-runtime;4.1.1 in public
+[ivy:resolve] 	found org.eclipse.angus#angus-activation;2.0.0 in public
+[ivy:resolve] 	found jakarta.inject#jakarta.inject-api;2.0.1 in public
+[ivy:resolve] 	found org.antlr#antlr4-runtime;4.13.0 in public
+[ivy:resolve] 	found org.springframework#spring-webmvc;6.1.10 in public
+[ivy:resolve] 	found org.springframework#spring-aop;6.1.10 in public
+[ivy:resolve] 	found org.springframework#spring-beans;6.1.10 in public
+[ivy:resolve] 	found org.springframework#spring-core;6.1.10 in public
+[ivy:resolve] 	found org.springframework#spring-jcl;6.1.10 in public
+[ivy:resolve] 	found org.springframework#spring-context;6.1.10 in public
+[ivy:resolve] 	found org.springframework#spring-expression;6.1.10 in public
+[ivy:resolve] 	found io.micrometer#micrometer-observation;1.12.7 in public
+[ivy:resolve] 	found io.micrometer#micrometer-commons;1.12.7 in public
+[ivy:resolve] 	found org.springframework#spring-web;6.1.10 in public
+[ivy:resolve] 	found jakarta.servlet.jsp.jstl#jakarta.servlet.jsp.jstl-api;3.0.0 in public
+[ivy:resolve] 	found jakarta.servlet#jakarta.servlet-api;6.0.0 in public
+[ivy:resolve] 	found jakarta.el#jakarta.el-api;5.0.0 in public
+[ivy:resolve] 	found jakarta.servlet.jsp#jakarta.servlet.jsp-api;3.1.1 in public
+[ivy:resolve] 	found org.postgresql#postgresql;42.7.4 in public
+[ivy:resolve] 	found org.checkerframework#checker-qual;3.42.0 in public
+[ivy:resolve] 	found org.slf4j#slf4j-simple;2.0.13 in public
+[ivy:resolve] 	found org.slf4j#slf4j-api;2.0.13 in public
+[ivy:resolve] 	found org.glassfish.web#jakarta.servlet.jsp.jstl;3.0.1 in public
+[ivy:resolve] 	found com.h2database#h2;2.2.224 in public
+[ivy:resolve] 	found org.testng#testng;7.10.2 in public
+[ivy:resolve] 	found com.beust#jcommander;1.82 in public
+[ivy:resolve] 	found org.webjars#jquery;3.7.1 in public
+[ivy:resolve] 	found org.seleniumhq.selenium#selenium-java;4.21.0 in public
+[ivy:resolve] 	found org.seleniumhq.selenium#selenium-api;4.21.0 in public
+[ivy:resolve] 	found org.seleniumhq.selenium#selenium-chrome-driver;4.21.0 in public
+[ivy:resolve] 	found com.google.auto.service#auto-service-annotations;1.1.1 in public
+[ivy:resolve] 	found org.seleniumhq.selenium#selenium-chromium-driver;4.21.0 in public
+[ivy:resolve] 	found org.seleniumhq.selenium#selenium-json;4.21.0 in public
+[ivy:resolve] 	found org.seleniumhq.selenium#selenium-remote-driver;4.21.0 in public
+[ivy:resolve] 	found com.google.guava#guava;33.2.0-jre in public
+[ivy:resolve] 	found com.google.guava#failureaccess;1.0.2 in public
+[ivy:resolve] 	found com.google.guava#listenablefuture;9999.0-empty-to-avoid-conflict-with-guava in public
+[ivy:resolve] 	found com.google.code.findbugs#jsr305;3.0.2 in public
+[ivy:resolve] 	found com.google.errorprone#error_prone_annotations;2.26.1 in public
+[ivy:resolve] 	found com.google.j2objc#j2objc-annotations;3.0.0 in public
+[ivy:resolve] 	found io.opentelemetry.semconv#opentelemetry-semconv;1.25.0-alpha in public
+[ivy:resolve] 	found io.opentelemetry#opentelemetry-api;1.38.0 in public
+[ivy:resolve] 	found io.opentelemetry#opentelemetry-context;1.38.0 in public
+[ivy:resolve] 	found io.opentelemetry#opentelemetry-exporter-logging;1.38.0 in public
+[ivy:resolve] 	found io.opentelemetry#opentelemetry-sdk;1.38.0 in public
+[ivy:resolve] 	found io.opentelemetry#opentelemetry-sdk-common;1.38.0 in public
+[ivy:resolve] 	found io.opentelemetry#opentelemetry-sdk-trace;1.38.0 in public
+[ivy:resolve] 	found io.opentelemetry#opentelemetry-sdk-metrics;1.38.0 in public
+[ivy:resolve] 	found io.opentelemetry#opentelemetry-sdk-logs;1.38.0 in public
+[ivy:resolve] 	found io.opentelemetry#opentelemetry-sdk-extension-autoconfigure-spi;1.38.0 in public
+[ivy:resolve] 	found io.opentelemetry#opentelemetry-sdk-extension-autoconfigure;1.38.0 in public
+[ivy:resolve] 	found org.seleniumhq.selenium#selenium-http;4.21.0 in public
+[ivy:resolve] 	found dev.failsafe#failsafe;3.3.2 in public
+[ivy:resolve] 	found org.seleniumhq.selenium#selenium-manager;4.21.0 in public
+[ivy:resolve] 	found org.seleniumhq.selenium#selenium-os;4.21.0 in public
+[ivy:resolve] 	found org.apache.commons#commons-exec;1.4.0 in public
+[ivy:resolve] 	found io.opentelemetry#opentelemetry-api-incubator;1.38.0-alpha in public
+[ivy:resolve] 	found org.seleniumhq.selenium#selenium-devtools-v123;4.21.0 in public
+[ivy:resolve] 	found org.seleniumhq.selenium#selenium-devtools-v124;4.21.0 in public
+[ivy:resolve] 	found org.seleniumhq.selenium#selenium-devtools-v125;4.21.0 in public
+[ivy:resolve] 	found org.seleniumhq.selenium#selenium-devtools-v85;4.21.0 in public
+[ivy:resolve] 	found org.seleniumhq.selenium#selenium-edge-driver;4.21.0 in public
+[ivy:resolve] 	found org.seleniumhq.selenium#selenium-firefox-driver;4.21.0 in public
+[ivy:resolve] 	found org.seleniumhq.selenium#selenium-ie-driver;4.21.0 in public
+[ivy:resolve] 	found org.seleniumhq.selenium#selenium-safari-driver;4.21.0 in public
+[ivy:resolve] 	found org.seleniumhq.selenium#selenium-support;4.21.0 in public
+[ivy:resolve] :: resolution report :: resolve 897ms :: artifacts dl 29ms
+[ivy:resolve] 	:: evicted modules:
+[ivy:resolve] 	jakarta.activation#jakarta.activation-api;2.1.0 by [jakarta.activation#jakarta.activation-api;2.1.1] in [compile, test, runtime]
+[ivy:resolve] 	org.slf4j#slf4j-api;1.7.36 by [org.slf4j#slf4j-api;2.0.13] in [test]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      compile     |   31  |   0   |   0   |   1   ||   30  |   0   |
+	|     provided     |   2   |   0   |   0   |   0   ||   2   |   0   |
+	|      runtime     |   36  |   0   |   0   |   1   ||   35  |   0   |
+	|       test       |   80  |   0   |   0   |   2   ||   78  |   0   |
+	---------------------------------------------------------------------
+[ivy:retrieve] :: retrieving :: ru.Pavelslavovich#webprak [sync]
+[ivy:retrieve] 	confs: [compile, provided, runtime, test]
+[ivy:retrieve] 	0 artifacts copied, 145 already retrieved (0kB/25ms)
+
+compile:
+
+compile-tests:
+
+test-selenium:
+     [java] [main] INFO org.testng.internal.Utils - [TestNG] Running:
+     [java]   /Users/pavel_loktionow/yasd_algorithms/webprak/testng-selenium.xml
+     [java] 
+     [java] апр. 21, 2026 9:42:53 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:42:53 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:42:57 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:42:57 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:42:59 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:42:59 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:43:03 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:43:03 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:43:05 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:43:05 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:43:08 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:43:08 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:43:11 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:43:11 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:43:14 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:43:14 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:43:17 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:43:17 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:43:19 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:43:19 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:43:21 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:43:21 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:43:23 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:43:23 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:43:25 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:43:25 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:43:27 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:43:27 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:43:29 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:43:29 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:43:33 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:43:33 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:43:36 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:43:36 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:43:39 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:43:39 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:43:42 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:43:42 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:43:44 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:43:44 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:43:46 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:43:46 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:43:49 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:43:49 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:43:51 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:43:51 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:43:54 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:43:54 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:43:56 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:43:56 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:43:59 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:43:59 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:44:01 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:44:01 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:44:04 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:44:04 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:44:06 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:44:06 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:44:09 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:44:09 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:44:12 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:44:12 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] апр. 21, 2026 9:44:15 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+     [java] WARNING: Unable to find CDP implementation matching 147
+     [java] апр. 21, 2026 9:44:15 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+     [java] WARNING: Unable to find version of CDP to use for 147.0.7727.56. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+     [java] 
+     [java] ===============================================
+     [java] webprak_selenium_suite
+     [java] Total tests run: 32, Passes: 32, Failures: 0, Skips: 0
+     [java] ===============================================
+     [java] 
+
+BUILD SUCCESSFUL
+Total time: 1 minute 26 seconds
